@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		body {
+			background: #ddd;
+		}
+		
+		ul li,
+		ol li {
+			list-style: none;
+		}
+		
+		* {
+			margin: 0;
+			padding: 0;
+			outline: none;
+		}
+		
+		.undb {
+			display: none;
+		}
+		
+		#calendar-input {
+			height: 38px;
+			width: 280px;
+			border: 1px solid #d3d3d3;
+			display: block;
+			margin: auto;
+			border-radius: 5px;
+			padding: 0 10px;
+			font-size: 14px;
+		}
+		
+		.calendar-con {
+			width: 300px;
+			margin: auto;
+			position: relative;
+		}
+		
+		.calendar {
+			background: #fff;
+			border: 1px solid #d3d3d3;
+			width: 300px;
+			border-radius: 5px;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+		.calendar .dateTimeInput {
+			width: 100%;
+			height: 38px;
+			width: calc(100% - 20px);
+			border-bottom: 1px solid #D3D3D3;
+			padding: 0 10px;
+		}
+		
+		.calendar .dateTimeInput input {
+			border: none;
+			width: calc(100% - 2px);
+			height: 38px;
+			font-size: 14px;
+			outline: none;
+		}
+		
+		.calendar .calendar-btn {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			height: 41px;
+			border-bottom: 1px solid #D3D3D3;
+		}
+		
+		.calendar .calendar-btn a {
+			text-decoration: none;
+			color: #999;
+			font-size: 12px;
+			height: 40px;
+			width: 20px;
+			display: inline-block;
+			line-height: 40px;
+			text-align: center;
+		}
+		
+		.calendar .title {
+			display: flex;
+			margin: 0 10px;
+		}
+		
+		.calendar .title li {
+			flex: 1;
+			text-align: center;
+			height: 40px;
+			line-height: 40px;
+			width: calc((100% - 20px)/7);
+		}
+		
+		.calendar .content .list ul {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		
+		.calendar .content {
+			margin: 0 10px;
+			padding-bottom: 10px;
+		}
+		
+		.calendar .content .list ul li {
+			text-align: center;
+			height: 30px;
+			line-height: 30px;
+			width: calc((100%/7));
+			cursor: pointer;
+			font-size: 13px;
+			transition: all .3s;
+			margin: 5px 0;
+		}
+		
+		.calendar .content .list ul li i {
+			display: block;
+			font-size: 8px;
+			margin-top: -17px;
+			font-style: normal;
+		}
+		
+		.calendar .content .list ul li.disabled {
+			/*background: #f0f0f0;*/
+			color: #f0f0f0;
+		}
+		
+		.calendar .content .list ul li.active {
+			background: blue;
+			color: #fff;
+		}
+		
+		.calendar .content .list ul li:hover {
+			color: darkgoldenrod;
+		}
+		
+		.calendar .content .list ul li.hover {
+			background: lightskyblue;
+			color: #fff;
+		}
+		
+		.calendar .content .list ul li.closure {
+			color: #c9c9c9;
+		}
+		
+		.calendar .content .list ul li.startDate {
+			color: orangered;
+			background: #fff000;
+			border-radius: 6px;
+			margin: 5px;
+			width: calc((100%/7) - 10px);
+		}
+		
+		.calendar .content .list ul li.endDate {
+			color: #0000FF;
+			background: #fff000;
+			border-radius: 6px;
+			margin: 5px;
+			width: calc((100%/7) - 10px);
+		}
+		
+		.calendar .bottom-btn {
+			border-top: 1px solid #f0f0f0;
+			padding: 10px;
+			text-align: right;
+		}
+		
+		.calendar .bottom-btn a {
+			display: inline-block;
+			color: #fff;
+			padding: 5px 10px;
+			border-radius: 3px;
+			background: blue;
+			font-size: 12px;
+			text-decoration: none;
+		}
+		
+		.calendar .bottom-btn a.disabled {
+			background: #999;
+			cursor: no-drop;
+		}
+	</style>
+
+	<body>
+
+		<div class="calendar-con">
+			<input type="text" id="calendar-input" placeholder="请输入日期" />
+			<div class="calendar"></div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="calendar.js"></script>
+		<script>
+			$("#calendar-input").click(function() {
+				
+				
+				new calendar(".calendar", {
+					checkCalender: true
+				});
+				
+			})
+
+			
+		</script>
+	</body>
+
+</html>
