@@ -8,3 +8,4 @@ checkCalender	boolean默认值：false	是否多选日期 true是多选，false�
 topcalendarTop	string默认值：38px	日历展示定位位置
 beforeToday	boolean默认值：false	今日之前是否不可选 ，true 是，false 否
 afterToday	boolean默认值：false	今日之后是否不可选 ，true 是，false 否
+ 
